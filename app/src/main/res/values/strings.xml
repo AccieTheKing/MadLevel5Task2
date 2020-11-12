@@ -5,4 +5,13 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <!--  Backlog screen  -->
+    <string name="txtViewReleaseDateBacklog">Release: %s</string>
+    <!--  Add Game screen  -->
+    <string name="hintTitle">Title</string>
+    <string name="hintPlatform">Platform</string>
+    <string name="hintDay">Day</string>
+    <string name="hintMonth">Month</string>
+    <string name="hintYear">Year</string>
+
 </resources>
