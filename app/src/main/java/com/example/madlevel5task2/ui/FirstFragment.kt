@@ -1,4 +1,4 @@
-package com.example.madlevel5example2.ui
+package com.example.madlevel5task2.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.madlevel5example2.R
-import com.example.madlevel5example2.model.GameBacklog
-import com.example.madlevel5example2.ui.adapters.GameBacklogAdapter
-import com.example.madlevel5example2.ui.viewmodels.GameBacklogViewModel
+import com.example.madlevel5task2.R
+import com.example.madlevel5task2.model.GameBacklog
+import com.example.madlevel5task2.ui.adapters.GameBacklogAdapter
+import com.example.madlevel5task2.ui.viewmodels.GameBacklogViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_first.*
 

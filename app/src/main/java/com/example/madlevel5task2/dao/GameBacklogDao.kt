@@ -1,10 +1,10 @@
-package com.example.madlevel5example2.dao
+package com.example.madlevel5task2.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.madlevel5example2.model.GameBacklog
+import com.example.madlevel5task2.model.GameBacklog
 
 @Dao
 interface GameBacklogDao {

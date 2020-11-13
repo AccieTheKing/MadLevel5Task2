@@ -1,11 +1,11 @@
-package com.example.madlevel5example2.ui.viewmodels
+package com.example.madlevel5task2.ui.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.madlevel5example2.model.GameBacklog
-import com.example.madlevel5example2.repository.GameBacklogRepository
+import com.example.madlevel5task2.model.GameBacklog
+import com.example.madlevel5task2.repository.GameBacklogRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

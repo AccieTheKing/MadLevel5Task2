@@ -1,11 +1,11 @@
-package com.example.madlevel5example2.ui.adapters
+package com.example.madlevel5task2.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.madlevel5example2.R
-import com.example.madlevel5example2.model.GameBacklog
+import com.example.madlevel5task2.R
+import com.example.madlevel5task2.model.GameBacklog
 import kotlinx.android.synthetic.main.item_card_backlog.view.*
 
 class GameBacklogAdapter(private val gameBacklogs: List<GameBacklog>) :

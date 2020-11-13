@@ -1,4 +1,4 @@
-package com.example.madlevel5example2.ui
+package com.example.madlevel5task2.ui
 
 import android.os.Bundle
 import android.view.Menu
@@ -6,7 +6,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import com.example.madlevel5example2.R
+import com.example.madlevel5task2.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
