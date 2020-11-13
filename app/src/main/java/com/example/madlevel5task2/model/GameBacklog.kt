@@ -8,7 +8,7 @@ import java.util.*
 @Entity(tableName = "backlogTable")
 class GameBacklog(
     @ColumnInfo(name = "title") var title: String,
-    @ColumnInfo(name = "lastUpdated") var platform: Date,
+    @ColumnInfo(name = "platform") var platform: Date,
     @ColumnInfo(name = "day") var day: Date,
     @ColumnInfo(name = "month") var month: Date,
     @ColumnInfo(name = "year") var year: Date,
