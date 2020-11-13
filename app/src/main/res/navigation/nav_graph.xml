@@ -7,17 +7,20 @@
 
     <fragment
         android:id="@+id/FirstFragment"
+        android:name="com.example.madlevel5example2.ui.FirstFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_game_backlog">
+        tools:layout="@layout/fragment_first">
+
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.madlevel5task2.ui.AddGameFragment"
+        android:name="com.example.madlevel5example2.ui.SecondFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_add_game">
+        tools:layout="@layout/fragment_second">
+
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
