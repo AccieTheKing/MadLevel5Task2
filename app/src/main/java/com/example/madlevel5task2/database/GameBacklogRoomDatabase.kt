@@ -4,12 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.example.madlevel5task2.dao.GameBacklogDao
 import com.example.madlevel5task2.model.GameBacklog
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
 
 @Database(entities = [GameBacklog::class], version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class GameBacklogRoomDatabase : RoomDatabase() {
     abstract fun gameBacklogDao(): GameBacklogDao
 
