@@ -13,13 +13,13 @@ class GameBacklogAdapter(private val gameBacklogs: List<GameBacklog>) :
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun databind(gameBacklog: GameBacklog) {
-            itemView.txtViewGameTitleBacklog.text = gameBacklog.title
-            itemView.txtViewPlatformTitleBacklog.text = gameBacklog.platform
-            itemView.txtViewReleaseDateBacklog.text = String().format(
-                "Release: %t %t %t", gameBacklog.day,
-                gameBacklog.month,
-                gameBacklog.year
-            )
+//            itemView.txtViewGameTitleBacklog.text = gameBacklog.title
+//            itemView.txtViewPlatformTitleBacklog.text = gameBacklog.platform
+//            itemView.txtViewReleaseDateBacklog.text = String().format(
+//                "Release: %s %s %s", gameBacklog.day,
+//                gameBacklog.month,
+//                gameBacklog.year
+//            )
         }
     }
 

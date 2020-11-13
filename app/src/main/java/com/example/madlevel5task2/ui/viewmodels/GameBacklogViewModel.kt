@@ -13,21 +13,22 @@ import kotlinx.coroutines.withContext
 import java.time.DayOfWeek
 import java.time.Month
 import java.time.Year
+import java.util.*
 
 class GameBacklogViewModel(application: Application) : AndroidViewModel(application) {
     private val mainScope = CoroutineScope(Dispatchers.Main)
     private val gameBacklogRepository = GameBacklogRepository(application.applicationContext)
 
-    val gameBacklogs: LiveData<List<GameBacklog>> = gameBacklogRepository.getAllGameBacklogs()
+//    val gameBacklogs: LiveData<List<GameBacklog>> = gameBacklogRepository.getAllGameBacklogs()
     val error = MutableLiveData<String>()
     val success = MutableLiveData<Boolean>()
 
     fun insertGameBackLog(
         title: String,
         platform: String,
-        day: DayOfWeek,
-        month: Month,
-        year: Year
+        day: Date,
+        month: Date,
+        year: Date
     ) {
         val gameBacklog = GameBacklog(
             title = title,
@@ -37,23 +38,23 @@ class GameBacklogViewModel(application: Application) : AndroidViewModel(applicat
             year = year
         )
 
-        if (isValidGameBacklog(gameBacklog)) {
-            mainScope.launch {
-                withContext(Dispatchers.IO) {
-                    gameBacklogRepository.insertGameBacklog(gameBacklog)
-                }
-                success.value = true
-            }
-        }
+//        if (isValidGameBacklog(gameBacklog)) {
+//            mainScope.launch {
+//                withContext(Dispatchers.IO) {
+////                    gameBacklogRepository.insertGameBacklog(gameBacklog)
+//                }
+//                success.value = true
+//            }
+//        }
     }
 
     fun deleteGameBacklog() {
-        mainScope.launch {
-            withContext(Dispatchers.IO) {
-                gameBacklogRepository.deleteGameBacklog()
-            }
-            success.value = true
-        }
+//        mainScope.launch {
+//            withContext(Dispatchers.IO) {
+////                gameBacklogRepository.deleteGameBacklog()
+//            }
+//            success.value = true
+//        }
     }
 
     private fun isValidGameBacklog(gameBacklog: GameBacklog): Boolean {

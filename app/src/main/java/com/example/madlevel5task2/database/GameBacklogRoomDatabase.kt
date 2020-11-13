@@ -7,8 +7,6 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.madlevel5task2.dao.GameBacklogDao
 import com.example.madlevel5task2.model.GameBacklog
-import kotlinx.coroutines.InternalCoroutinesApi
-import kotlinx.coroutines.internal.synchronized
 
 @Database(entities = [GameBacklog::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
@@ -21,7 +19,6 @@ abstract class GameBacklogRoomDatabase : RoomDatabase() {
         @Volatile
         private var DATABASE_INSTANCE: GameBacklogRoomDatabase? = null
 
-        @InternalCoroutinesApi
         fun getDatabase(context: Context): GameBacklogRoomDatabase? {
             if (DATABASE_INSTANCE == null) {
                 synchronized(GameBacklogRoomDatabase::class.java) {
