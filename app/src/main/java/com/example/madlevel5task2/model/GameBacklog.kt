@@ -9,9 +9,7 @@ import java.util.*
 class GameBacklog(
     @ColumnInfo(name = "title") var title: String,
     @ColumnInfo(name = "platform") var platform: String,
-    @ColumnInfo(name = "day") var day: Date,
-    @ColumnInfo(name = "month") var month: Date,
-    @ColumnInfo(name = "year") var year: Date,
+    @ColumnInfo(name = "releaseDate") var releaseDate: Date,
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id") var id: Long? = null
 )

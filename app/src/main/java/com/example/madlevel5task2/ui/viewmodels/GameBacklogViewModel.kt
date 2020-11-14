@@ -23,16 +23,12 @@ class GameBacklogViewModel(application: Application) : AndroidViewModel(applicat
     fun insertGameBackLog(
         title: String,
         platform: String,
-        day: Date,
-        month: Date,
-        year: Date
+        releaseDate: Date
     ) {
         val gameBacklog = GameBacklog(
             title = title,
             platform = platform,
-            day = day,
-            month = month,
-            year = year
+            releaseDate = releaseDate
         )
 
         if (isValidGameBacklog(gameBacklog)) {
@@ -64,16 +60,8 @@ class GameBacklogViewModel(application: Application) : AndroidViewModel(applicat
                 error.value = "Platform must not be empty!"
                 false
             }
-            gameBacklog.day.toString().isBlank() -> {
-                error.value = "Day must not be empty!"
-                false
-            }
-            gameBacklog.month.toString().isBlank() -> {
-                error.value = "Month must not be empty!"
-                false
-            }
-            gameBacklog.year.toString().isBlank() -> {
-                error.value = "Year must not be empty!"
+            gameBacklog.releaseDate.toString().isBlank() -> {
+                error.value = "Release date must not be empty!"
                 false
             }
             else -> true
