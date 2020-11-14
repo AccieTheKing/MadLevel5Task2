@@ -29,10 +29,8 @@ class AddGameFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Log.i(TAG, "Back Button Pressed")
         when (item.itemId) {
             android.R.id.home -> {
-                Log.i(TAG, "home on backpressed")
                 requireActivity().onBackPressed()
                 return true
             }
