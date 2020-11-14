@@ -1,6 +1,5 @@
 package com.example.madlevel5task2.ui.adapters
 
-import android.provider.Settings.Secure.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +19,7 @@ class GameBacklogAdapter(private val gameBacklogs: List<GameBacklog>) :
             val calendar: Calendar = Calendar.getInstance();
             calendar.time = gameBacklog.releaseDate
             val dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)
-            val monthOfYear = DateFormatSymbols().months[calendar.get(Calendar.DAY_OF_MONTH) - 1]
+            val monthOfYear = DateFormatSymbols().months[calendar.get(Calendar.MONTH) - 1]
             val year = calendar.get(Calendar.YEAR)
 
 
