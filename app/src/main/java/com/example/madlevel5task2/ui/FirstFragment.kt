@@ -25,7 +25,6 @@ class FirstFragment : Fragment() {
     private var gameBackLogs: ArrayList<GameBacklog> = arrayListOf()
 
     private lateinit var gameBacklogAdapter: GameBacklogAdapter
-    private lateinit var viewManager: RecyclerView.LayoutManager
 
     private val viewModel: GameBacklogViewModel by viewModels()
 
