@@ -2,6 +2,7 @@ package com.example.madlevel5task2.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -42,8 +43,6 @@ class FirstFragment : Fragment() {
         initRv()
         observeAddGameBacklog()
         observeDeleteGameBacklog()
-
-
     }
 
     private fun initRv() {

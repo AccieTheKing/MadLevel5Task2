@@ -25,39 +25,33 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
         navController = findNavController(R.id.nav_host_fragment)
-
-        onInitDestinationListener();
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun onInitDestinationListener() {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_main, menu)
+        val deleteMenuItem = menu.findItem(R.id.btnRemoveAll)
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.FirstFragment -> {
                     fabActionScreenButton.setOnClickListener {
+                        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+                        supportActionBar?.setDisplayShowHomeEnabled(true)
+                        supportActionBar?.setTitle(R.string.addGameTitle)
                         navController.navigate(R.id.action_FirstFragment_to_SecondFragment)
                     }
+
                     fabActionScreenButton.setImageResource(android.R.drawable.ic_menu_edit)
+                    deleteMenuItem.isVisible = true
+                    supportActionBar?.setDisplayHomeAsUpEnabled(false)
+                    supportActionBar?.setDisplayShowHomeEnabled(false)
+                    supportActionBar?.setTitle(R.string.app_name)
                 }
                 R.id.SecondFragment -> {
+                    deleteMenuItem.isVisible = false
                     val cal = Calendar.getInstance()
-
 
                     fabActionScreenButton.setOnClickListener {
                         cal.set(Calendar.YEAR, txtAddYear.text.toString().toInt())
@@ -76,5 +70,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        return true
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.btnRemoveAll -> {
+                viewModel.deleteGameBacklog()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 }
