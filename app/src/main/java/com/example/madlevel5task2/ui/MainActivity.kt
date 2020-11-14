@@ -74,13 +74,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
+        when (item.itemId) {
             R.id.btnRemoveAll -> {
                 viewModel.deleteGameBacklog()
-                true
+                return true
             }
-            else -> super.onOptionsItemSelected(item)
         }
+
+        return super.onOptionsItemSelected(item)
     }
 
 }
