@@ -8,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.madlevel5task2.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.fabActionScreenButton).setOnClickListener { view ->
             navController.navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
+        onInitDestinationListener();
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -35,6 +38,19 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun onInitDestinationListener() {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.FirstFragment -> {
+                    fabActionScreenButton.setImageResource(android.R.drawable.ic_menu_edit)
+                }
+                R.id.SecondFragment -> {
+                    fabActionScreenButton.setImageResource(android.R.drawable.ic_menu_save)
+                }
+            }
         }
     }
 }
