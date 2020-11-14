@@ -11,12 +11,13 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <!--  Backlog screen  -->
-    <string name="txtViewReleaseDateBacklog">Release: %s %s %s</string>
+    <string name="deleteIconString">deleteIconString</string>
     <!--  Add Game screen  -->
     <string name="hintTitle">Title</string>
     <string name="hintPlatform">Platform</string>
     <string name="hintDay">Day</string>
     <string name="hintMonth">Month</string>
     <string name="hintYear">Year</string>
+    <string name="addGameTitle">Add Game</string>
     <string name="todo">TODO</string>
 </resources>
