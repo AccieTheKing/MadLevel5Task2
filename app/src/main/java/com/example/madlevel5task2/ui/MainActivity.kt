@@ -3,14 +3,20 @@ package com.example.madlevel5task2.ui
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.madlevel5task2.R
+import com.example.madlevel5task2.ui.viewmodels.GameBacklogViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
+    private val viewModel: GameBacklogViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,9 +46,15 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.FirstFragment -> {
+                    fabActionScreenButton.setOnClickListener {
+                        navController.navigate(R.id.action_FirstFragment_to_SecondFragment)
+                    }
                     fabActionScreenButton.setImageResource(android.R.drawable.ic_menu_edit)
                 }
                 R.id.SecondFragment -> {
+                    fabActionScreenButton.setOnClickListener {
+                        navController.navigate(R.id.action_SecondFragment_to_FirstFragment)
+                    }
                     fabActionScreenButton.setImageResource(android.R.drawable.ic_menu_save)
                 }
             }

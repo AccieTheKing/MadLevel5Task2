@@ -10,11 +10,14 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:background="#EFEAEA"
         android:backgroundTint="#F4F2F2"
         android:backgroundTintMode="screen"
         app:cardBackgroundColor="#F8F3F3"
-        app:contentPadding="10dp"
+        app:contentPaddingLeft="10dp"
+        app:contentPaddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +36,8 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    app:boxBackgroundColor="#FFFFFF">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -48,6 +52,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
                         android:hint="@string/hintPlatform" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -64,6 +69,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
                         android:hint="@string/hintDay" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,6 +80,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="#FFFFFF"
                         android:hint="@string/hintMonth" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,6 +91,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
                         android:hint="@string/hintYear" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>

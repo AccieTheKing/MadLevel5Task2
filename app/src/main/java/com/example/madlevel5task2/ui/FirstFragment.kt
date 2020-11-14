@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madlevel5task2.R
@@ -13,6 +15,7 @@ import com.example.madlevel5task2.model.GameBacklog
 import com.example.madlevel5task2.ui.adapters.GameBacklogAdapter
 import com.example.madlevel5task2.ui.viewmodels.GameBacklogViewModel
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_first.*
 
 /**
@@ -37,13 +40,11 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        fabActionScreenButton.setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-//        }
-
         initRv()
         observeAddGameBacklog()
         observeDeleteGameBacklog()
+
+
     }
 
     private fun initRv() {
